@@ -83,6 +83,36 @@ module.exports = {
 
 ## Configurations
 
+### autoSuffix
+
+- **type:** `boolean`
+- **default:** `true`
+
+Automatically complete the suffix of the redirect. For example, if set to `true`, an `alias` like this:
+
+```js
+{
+  '/foo': '/bar.html',
+}
+```
+
+will be equivalent to
+
+```js
+{
+  '/foo': '/bar.html',
+  '/foo/': '/bar.html',
+  '/foo.html': '/bar.html',
+}
+```
+
+### alias
+
+- **type:** `Record<string, string | Location | Function>`
+- **default:** `{}`
+
+A map of aliases. Any request of key will be redirected to corresponding value.
+
 ### locales
 
 - **type:** `boolean`

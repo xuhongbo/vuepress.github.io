@@ -81,6 +81,36 @@ module.exports = {
 
 ## 配置
 
+### autoSuffix
+
+- **类型:** `boolean`
+- **默认值:** `true`
+
+自动补全重定向的后缀。举个例子，当设为 `true` 时，一个如下的 `alias`：
+
+```js
+{
+  '/foo': '/bar.html',
+}
+```
+
+将相当于
+
+```js
+{
+  '/foo': '/bar.html',
+  '/foo/': '/bar.html',
+  '/foo.html': '/bar.html',
+}
+```
+
+### alias
+
+- **类型:** `Record<string, string | Location | Function>`
+- **默认值:** `{}`
+
+一个网址别名的键值对。当一个键被访问时，会被自动重定向到对应的值。
+
 ### locales
 
 - **类型:** `boolean`
